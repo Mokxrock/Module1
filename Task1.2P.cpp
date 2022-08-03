@@ -4,7 +4,6 @@
 int LED1 = 10; // Pin for LED
 int motionSensor = 2; // Pin for Motion Sensor
 int LEDState = 0; // State of LED (HIGH / LOW)
-int motionSensorState = 0; // State of Motion Sensor (HIGH / LOW)
 
 void setup()
 {
@@ -18,9 +17,9 @@ void loop(){}
 // Change State of LED when Motion changes  
 void motionSensorTrigger()
 {
-    motionSensorState = !motionSensorState;
 	LEDState = !LEDState;
     digitalWrite(LED1,LEDState); 
+    int motionSensorState = digitalRead(motionSensor); // State of Motion Sensor (HIGH / LOW)
     Serial.print("Motion: ");
     Serial.println(motionSensorState);
     Serial.print("LED: ");
