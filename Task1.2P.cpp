@@ -11,7 +11,7 @@ void setup()
   pinMode(LED1, OUTPUT); // Set LED as an Output
   pinMode(motionSensor, INPUT); // Set Motion Sensors as Input
   Serial.begin(9600);// Initialize serial
-  attachInterrupt(digitalPinToInterrupt(motionSensor), motionSensorTrigger, RISE);
+  attachInterrupt(digitalPinToInterrupt(motionSensor), motionSensorTrigger, CHANGE);
 }
 
 void loop(){}
